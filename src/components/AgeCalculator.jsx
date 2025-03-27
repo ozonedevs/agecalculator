@@ -11,12 +11,13 @@ function AgeCalculator() {
   const currentYear = today.getFullYear();
   const currentMonth = today.getMonth() + 1;
   const currentDay = today.getDate();
-
+  // This is a function calculate the last day of the following month based on the year and month provided.
   const maxDayForMonth = (year, month) => {
     if (!year || !month) return 31;
     return new Date(year, month, 0).getDate();
   };
 
+  // calculateMaxDay is a function that calculates the last day of the month based on the year and month provided.
   const calculatedMaxDay = maxDayForMonth(birthDate.year, birthDate.month);
 
   const calculateAge = () => {
@@ -53,6 +54,7 @@ function AgeCalculator() {
 
   return (
     <div>
+      <h2>Age Calculator</h2>
       <AgeForm
         year={birthDate.year}
         month={birthDate.month}
